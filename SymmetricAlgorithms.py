@@ -38,7 +38,7 @@ class AES:
         encryptedData = decryptor.update(encryptedData) + decryptor.finalize()
         #----------- End
         endDecTime = time.time() - startDecTime
-        print("Decrypt Time: " + str(endEncTime))
+        print("Decrypt Time: " + str(endDecTime))
         outFile = open("decrypted.mp4", "wb")
         outFile.write(encryptedData)
         outFile.close()
@@ -64,13 +64,16 @@ class FERNET:
         #----------- End
         endEncTime = time.time() - startEncTime
         print("Encrypt Time: " + str(endEncTime))
-
+        outFile = open("encrypted.mp4", "wb")
+        outFile.write(encryptedData)
+        outFile.close()
+        
         startDecTime = time.time()
         #----------- Start 
         encryptedData = cipher.decrypt(encryptedData)
         #----------- End
         endDecTime = time.time() - startDecTime
-        print("Decrypt Time: " + str(endEncTime))
+        print("Decrypt Time: " + str(endDecTime))
         outFile = open("decrypted.mp4", "wb")
         outFile.write(encryptedData)
         outFile.close()
