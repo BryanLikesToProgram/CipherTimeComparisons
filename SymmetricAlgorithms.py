@@ -2,6 +2,7 @@ import time
 import os
 import io
 import cryptography
+import sys
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 from cryptography.fernet import Fernet
@@ -81,3 +82,45 @@ class FERNET:
 
     def multiFernet(self) :
         print( "Not yet implimented" )
+
+class XOR:
+        def __init__(self, filename) : 
+            self.filename = filename
+            print("Cipher: XOR")
+                                                                                         
+        def simpleXor(self): 
+            print("Mode: No OTP")
+            inFile = open(self.filename, 'rb')
+            fileData = inFile.read()
+            inFile.close()
+        
+            dataLength = len(fileData)
+            keySize = dataLength + 4 #Easy padding for bit length !/4 
+            key = os.urandom(int(keySize))
+
+            encryptedData = bytearray()
+            ## Encrypt using XOR ##
+            startEncTime = time.time()
+            #----------- Start
+            for i in range(0, (dataLength-1)):
+                encryptedData.append( fileData[i] ^ key[i] )
+            #----------- End
+            endEncTime = time.time() - startEncTime
+            print("Encrypt Time: " + str(endEncTime))
+            outFile = open("encrypted.mp4", "wb")
+            outFile.write(encryptedData)
+            outFile.close()
+
+            decryptedData = bytearray()
+            ## Decrypt using XOR ##
+            startDecTime = time.time()
+            #----------- Start
+            for i in range(0, (dataLength-1)):
+                decryptedData.append( encryptedData[i] ^ key[i] )
+            #----------- End
+            endDecTime = time.time() - startDecTime
+            print("Decrypt Time: " + str(endDecTime))
+            outFile = open("decrypted.mp4", "wb")
+            outFile.write(decryptedData)
+            outFile.close()
+            

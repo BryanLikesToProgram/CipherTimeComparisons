@@ -54,7 +54,7 @@ class RSA:
 
         privKey = rsa.generate_private_key(
             public_exponent=65537,
-            key_size=8192,
+            key_size=32768,
             backend=default_backend()
         )
         pubKey = privKey.public_key()
