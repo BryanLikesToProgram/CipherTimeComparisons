@@ -6,12 +6,12 @@ Easy MP4 Usage
 ------
 + Install the Python Cryptography library 
 ```
-pip3 install cryptography
+$ pip3 install cryptography
 ```
 + Place a file named "test.mp4" in the root dir 
 + run ciphertest.py
 ```
-Python3 ciphertest.py
+$ Python3 ciphertest.py
 ```
 
 
@@ -19,10 +19,25 @@ Other files
 ------
 + Install the Python Cryptography library 
 ```
-pip3 install cryptography
+$ pip3 install cryptography
 ```
-+ Open ciphertest.py with a text editor and replace "__test.mp4__" with your file name 
-+ run ciphertest.py
++ run ciphertest.py with your filename 
++ select your cipher 
 ```
-Python3 ciphertest.py
+$ python3 ciphertest.py testfile.txt
+
+ Which Cipher?
+ (1) AES
+ (2) FERNET
+ (3) XOR
+ (4) Elliptic Curve
+ (5) RSA
+ 
+$ 1 
+
+Running Demo...
+------Symmetric Cryptographic Algorithms------
+AES
+Encrypt Time Elapsed.........
+
 ```
