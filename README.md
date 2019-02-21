@@ -30,8 +30,9 @@ $ python3 ciphertest.py testfile.txt
  (1) AES
  (2) FERNET
  (3) XOR
- (4) Elliptic Curve
- (5) RSA
+ (4) PRESENT-80
+ (5) Elliptic Curve
+ (6) RSA
  
 $ 1 
 
