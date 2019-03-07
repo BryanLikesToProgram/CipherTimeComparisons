@@ -1,6 +1,6 @@
 CipherTimeComparisons
 ======
-Comparing encrypt/decrypt times of algorithms in the Cryptography library
+Benchmarking encrypt/decrypt times of algorithms in the Cryptography library
 
 Easy MP4 Usage
 ------
